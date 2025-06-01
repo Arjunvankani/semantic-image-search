@@ -171,14 +171,14 @@ def app():
                     st.markdown('</div>', unsafe_allow_html=True)
         else:
             st.warning("No similar images found. Try another keyword.")
-
+    st.markdown( f"👁️ Total Page Views: **{views}**")
     st.markdown("""
         <footer>
             Created by <strong>Arjun Vankani</strong> |
             <a href="https://github.com/Arjunvankani" target="_blank">GitHub</a> |
             <a href="https://arjunvankani.github.io/arjun/" target="_blank">Portfolio</a> |
             <a href="https://www.linkedin.com/in/arjun-vankani/" target="_blank">LinkedIn</a>
-            f"👁️ Total Page Views: **{views}**"
+           
         </footer>
     """, unsafe_allow_html=True)
 
