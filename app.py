@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Run with: streamlit run app.py --server.fileWatcherType=none
 import streamlit as st
 import os
