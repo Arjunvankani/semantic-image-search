@@ -29,8 +29,6 @@ def increment_counter():
     return data["views"]
 
 views = increment_counter()
-st.sidebar.markdown(f"👁️ Total Page Views: **{views}**")
-
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 class SemanticImageSearch:
@@ -158,8 +156,6 @@ def app():
 
     if st.button("Search"):
         st.session_state.search_query = query
-            
-        
                 
         results = search_engine.search(query)
         results = results[:6]
@@ -176,16 +172,15 @@ def app():
         else:
             st.warning("No similar images found. Try another keyword.")
 
-
     st.markdown("""
         <footer>
             Created by <strong>Arjun Vankani</strong> |
             <a href="https://github.com/Arjunvankani" target="_blank">GitHub</a> |
             <a href="https://arjunvankani.github.io/arjun/" target="_blank">Portfolio</a> |
             <a href="https://www.linkedin.com/in/arjun-vankani/" target="_blank">LinkedIn</a>
+            f"👁️ Total Page Views: **{views}**"
         </footer>
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
-
     app()
