@@ -9,6 +9,27 @@ import faiss
 import glob
 from PIL import Image
 import streamlit as st
+import os
+import json
+
+def load_counter():
+    if not os.path.exists("counter.json"):
+        with open("counter.json", "w") as f:
+            json.dump({"views": 0}, f)
+
+    with open("counter.json", "r") as f:
+        data = json.load(f)
+    return data
+
+def increment_counter():
+    data = load_counter()
+    data["views"] += 1
+    with open("counter.json", "w") as f:
+        json.dump(data, f)
+    return data["views"]
+
+views = increment_counter()
+st.sidebar.markdown(f"👁️ Total Page Views: **{views}**")
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
